@@ -113,3 +113,34 @@ function mySortBy(array, callback){
     }
     );
 }
+
+//myFlatten([1, [2], [3, [[4]]]], true);
+//=> [1, 2, 3, [[4]]];
+function myFlatten(array, shallow, newArray=[]){
+    //start of shallow
+    if (shallow){
+        for (let i = 0; i < array.length; i++){
+            if (Array.isArray(array[i]) === false){
+                newArray.push(array[i])
+            }
+            else {
+                for (let j = 0; j < array[i].length; j++){
+                    newArray.push(array[i][j])
+                }
+            }
+        }
+    } //end of shallow
+    else {
+        for (let i = 0; i < array.length; i++){
+            if (Array.isArray(array[i]) === false){
+                newArray.push(array[i])
+            }
+            else {
+                //recurse REEECURSE
+                myFlatten(array[i], false, newArray)
+            }
+        }
+    }
+
+    return newArray
+}
