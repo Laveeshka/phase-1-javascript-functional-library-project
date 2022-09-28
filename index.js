@@ -94,3 +94,22 @@ function myKeys(object){
 function myValues(object){
     return Object.values(object);
 }
+
+////BONUS BABY BONUS////
+
+function mySortBy(array, callback){
+    let sortedArray = [...array]; //creates a copy of the array argument
+    return sortedArray.sort((i, j) => //use the compare function to prevent the sort order based on the unicode  code point values
+    {
+        if (callback(i) > callback(j)){ //callback(j) will come first
+            return 1;
+        }
+        else if (callback(i) < callback(j)){ //callback(i) will come first
+            return -1;
+        }
+        else {
+            return 0; //positions unchanged
+        }
+    }
+    );
+}
