@@ -66,3 +66,19 @@ function mySize(collection){
     const checkedCollection = convertToArray(collection);
     return checkedCollection.length;
 }
+
+////ARRAY FUNCTIONS///////
+
+//myFirst
+function myFirst(array, n){
+    if (!n)
+        return array[0];
+    return array.slice(0, n);
+}
+
+//myLast
+function myLast(array, n){
+    if (!n)
+        return array[array.length-1];
+    return array.slice(array.length-n);
+}
