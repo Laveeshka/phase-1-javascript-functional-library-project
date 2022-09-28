@@ -82,3 +82,15 @@ function myLast(array, n){
         return array[array.length-1];
     return array.slice(array.length-n);
 }
+
+/////Object Functions///////
+
+//myKeys
+function myKeys(object){
+    return Object.keys(object);
+}
+
+//myValues
+function myValues(object){
+    return Object.values(object);
+}
